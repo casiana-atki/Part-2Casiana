@@ -38,6 +38,19 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        { //Makes the landing timer get a little bigger each time, we go through the landing curve to get back the height of the curve 
+            landingTimer += 0.1f * Time.deltaTime;
+            float interpolation = landing.Evaluate(landingTimer);
+            if(transform.localScale.z < 0.1)
+            {
+                Destroy(gameObject);
+            }
+
+            //here we get the value for how far we've travelled from our last value 
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, interpolation);
+        }
+
         lineRenderer.SetPosition(0, transform.position);  
         if (points.Count > 0 )
         {
