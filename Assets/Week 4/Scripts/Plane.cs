@@ -13,18 +13,22 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed = 1.0f;
     public AnimationCurve landing;
     float landingTimer;
+    public GameObject otherPlane;
+    float range; 
+    SpriteRenderer sprtrender;
+    public float collisionRange = 0.47f; 
     //When writing this array, it allows you to put in sprites for your prefab. With later code, these sprites can be randomized upon launch. 
     public Sprite[] planeModels; 
 
     private void Start()
     {
-        
+        sprtrender = GetComponent<SpriteRenderer>(); 
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 1; 
         lineRenderer.SetPosition(0, transform.position);
 
         rigibody = GetComponent<Rigidbody2D>();
-       GetComponent<SpriteRenderer>().sprite = planeModels[Random.Range(0, planeModels.Length)];
+        GetComponent<SpriteRenderer>().sprite = planeModels[Random.Range(0, planeModels.Length)];
         speed = Random.Range(1.0f, 3.0f);
     }
 
@@ -92,6 +96,43 @@ public class NewBehaviourScript : MonoBehaviour
             lineRenderer.positionCount++;
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, newPosition);
             lastPosition = newPosition;
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+     {
+        range = Vector3.Distance(currentPosition, collision.transform.position);  
+         if (range > 0.40f)
+         {
+             if (otherPlane.activeInHierarchy)
+             {
+                 sprtrender.color = Color.red;
+             }
+         }
+     }
+
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        range = Vector3.Distance(currentPosition, collision.transform.position);
+        if (range > 0.16)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (otherPlane.activeInHierarchy)
+        {
+            sprtrender.color = Color.white;
         }
     }
 
