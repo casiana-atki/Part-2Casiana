@@ -13,6 +13,8 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed = 1.0f;
     public AnimationCurve landing;
     float landingTimer;
+    //When writing this array, it allows you to put in sprites for your prefab. With later code, these sprites can be randomized upon launch. 
+    public Sprite[] planeModels; 
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class NewBehaviourScript : MonoBehaviour
         lineRenderer.SetPosition(0, transform.position);
 
         rigibody = GetComponent<Rigidbody2D>();
+       GetComponent<SpriteRenderer>().sprite = planeModels[Random.Range(0, planeModels.Length)];
+        speed = Random.Range(1.0f, 3.0f);
     }
 
     private void FixedUpdate()
@@ -38,6 +42,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Update()
     {
+         
+        
         if (Input.GetKey(KeyCode.Space))
         { //Makes the landing timer get a little bigger each time, we go through the landing curve to get back the height of the curve 
             landingTimer += 0.1f * Time.deltaTime;
