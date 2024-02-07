@@ -21,6 +21,7 @@ public class Knight : MonoBehaviour
     public float maxHealth = 5;
     //Making a boolean to check if we are dead, so that if we are dead, we can't move 
     bool isDead = false; 
+
     void Start()
     {
         //Calling the reference
@@ -66,7 +67,8 @@ public class Knight : MonoBehaviour
     private void OnMouseDown()
     {   if (isDead) return; 
         clickedOnSelf = true;
-        TakeDamage(1);
+        //replaces take damage and the need for the health bar 
+        SendMessage("TakeDamage", 1); 
 
     }
 
@@ -75,7 +77,7 @@ public class Knight : MonoBehaviour
         clickedOnSelf = false;
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         //Mathf.Clamp makes it so that health is retrained because 2 numbers, if not, stuff happens 
