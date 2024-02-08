@@ -62,6 +62,11 @@ public class Knight : MonoBehaviour
         }
         //References the float in the animator called "Movement" and makes it so that the movement is equaled to the movement.magnitude
         animator.SetFloat("Movement", movement.magnitude);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetTrigger("Attack");
+        }
     }
 
     private void OnMouseDown()
