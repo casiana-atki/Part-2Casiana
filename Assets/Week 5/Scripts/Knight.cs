@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Knight : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Knight : MonoBehaviour
     public float maxHealth = 5;
     //Making a boolean to check if we are dead, so that if we are dead, we can't move 
     bool isDead = false; 
+
 
     void Start()
     {
@@ -55,7 +57,8 @@ public class Knight : MonoBehaviour
     void Update()
     {   if (isDead) return;
         // 0 is the left click, here I'm saying "If the left mouse button is clicked" "!clickedOnSelf" means that we don't move when we click on ourselves
-        if (Input.GetMouseButtonDown(0) && !clickedOnSelf)
+        //"!EventSystem.current.IsPointerOverGameObject()" essentially says that the code inside the if statement will only happen if you're not clicked on something in event system
+        if (Input.GetMouseButtonDown(0) && !clickedOnSelf && !EventSystem.current.IsPointerOverGameObject())
         {
             //the destination is determined to be wherever the player clicked
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
