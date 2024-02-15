@@ -26,6 +26,7 @@ public class Knight : MonoBehaviour
 
     void Start()
     {
+        
         //Calling the reference
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -101,4 +102,5 @@ public class Knight : MonoBehaviour
             animator.SetTrigger("Take Damage");
         }
     }
+
 }
