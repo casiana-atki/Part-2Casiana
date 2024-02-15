@@ -30,7 +30,9 @@ public class Knight : MonoBehaviour
         //Calling the reference
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        health = maxHealth; 
+        health = PlayerPrefs.GetFloat("Health", maxHealth);
+        ActiveState();
+
     }
 
     //FixedUpdate happens before update (for physics)
@@ -91,16 +93,25 @@ public class Knight : MonoBehaviour
         health -= damage;
         //Mathf.Clamp makes it so that health is retrained because 2 numbers, if not, stuff happens 
         health = Mathf.Clamp(health, 0, maxHealth);
+        ActiveState();
+    }
+
+    public void HealthValue(float value)
+    {
+        health = value;
+    }
+
+    public void ActiveState()
+    {
         if (health <= 0)
         {
             isDead = true;
-            animator.SetTrigger("Death"); 
+            animator.SetTrigger("Death");
         }
         else
         {
-            isDead = false; 
+            isDead = false;
             animator.SetTrigger("Take Damage");
         }
     }
-
 }
