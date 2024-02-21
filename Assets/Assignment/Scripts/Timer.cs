@@ -6,30 +6,26 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 
+
 public class Timer : MonoBehaviour
 {
-    public float time = 0;
     public float maxTime = 60;
-    public Slider slider; 
-
+    public Slider slider;
+   
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("CurrentTime", slider.value);
+
     }
 
     public void Update()
     {
-        slider.value -= 1 * Time.deltaTime;
-        CurrentTime();
+        maxTime -= 1 * Time.deltaTime;
+        slider.value = maxTime;
+
 
     }
 
-    public void CurrentTime()
-    {
-        PlayerPrefs.SetFloat("CurrentTime", slider.value);
-    }
 }
 
 
 
- */
