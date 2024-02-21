@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CutleryBehaviour : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 15f;
     Rigidbody2D cutleryRB;
     public GameObject cutleryPREFAB; 
     public Sprite[] cutleryModels;
@@ -16,7 +16,7 @@ public class CutleryBehaviour : MonoBehaviour
     {
         cutleryRB = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().sprite = cutleryModels[Random.Range(0, cutleryModels.Length)];
-        Destroy(gameObject, 15);
+        Destroy(gameObject, 10);
     }
 
     void Update()
