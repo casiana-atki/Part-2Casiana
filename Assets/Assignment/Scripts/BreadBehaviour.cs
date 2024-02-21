@@ -20,7 +20,7 @@ public class BreadBehaviour : MonoBehaviour
 ;
         //health = PlayerPrefs.GetFloat("Health", maxHealth);
         health = maxHealth;
-        CurrentState();
+        //CurrentState();
     }
 
     void Update()
@@ -31,16 +31,17 @@ public class BreadBehaviour : MonoBehaviour
     public void Hit(float damage)
     {
         health -= damage;
-        //health = Mathf.Clamp(health, 0, maxHealth);
-        CurrentState();
+        health = Mathf.Clamp(health, 0, maxHealth);
+        //CurrentState();
 
     }
+
    // public void HealthValue(float value)
    // {
         //health = value;
    // }
 
-    public void CurrentState()
+    /*public void CurrentState()
     {
         if (health <= 0)
         {
@@ -52,5 +53,5 @@ public class BreadBehaviour : MonoBehaviour
             isDead = false;
             animator.SetTrigger("Hit");
         }
-    }
+    }*/
 }

@@ -34,9 +34,7 @@ public class CutleryBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.SendMessage("Hit", 1);
-        }
+            collision.gameObject.SendMessage("Hit", 1, SendMessageOptions.DontRequireReceiver); 
+
     }
 }
