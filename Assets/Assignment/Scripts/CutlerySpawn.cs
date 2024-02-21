@@ -7,7 +7,7 @@ using UnityEngine;
 public class CutlerySpawn : MonoBehaviour
 {
     public GameObject cutleryPREFAB;
-    public float spawnInterval = 0.5f;
+    public float spawnInterval = 1.5f;
     public float minX = 0;
     public float maxX = 91f;
     public float minY = 0f;

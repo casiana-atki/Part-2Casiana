@@ -8,9 +8,9 @@ public class CutleryBehaviour : MonoBehaviour
 {
     public float speed = 15f;
     Rigidbody2D cutleryRB;
-    public GameObject cutleryPREFAB; 
     public Sprite[] cutleryModels;
-    public float time = 0; 
+    public float time = 0;
+    public GameObject bread;
 
     void Start()
     {
@@ -34,8 +34,9 @@ public class CutleryBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.SendMessage("Hit", 1);
-        Destroy(gameObject);
-
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.SendMessage("Hit", 1);
+        }
     }
 }
