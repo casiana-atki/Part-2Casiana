@@ -10,7 +10,7 @@ public class BreadBehaviour : MonoBehaviour
     public float health;
     public float maxHealth = 5;
     Animator animator;
-    bool isDead = false;
+    //bool isDead = false;
 
 
     void Start()
