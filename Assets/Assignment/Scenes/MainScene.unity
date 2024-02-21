@@ -2961,6 +2961,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1403569808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403569810}
+  - component: {fileID: 1403569809}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1403569809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403569808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bddac86a2bd104197555b15ffefedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 60
+  slider: {fileID: 0}
+--- !u!4 &1403569810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403569808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 342.1533, y: 439.0165, z: 4.019013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557998946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,7 +3062,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1800549192}
   - component: {fileID: 1800549193}
-  - component: {fileID: 1800549194}
   m_Layer: 5
   m_Name: TimerBar
   m_TagString: Untagged
@@ -3096,7 +3141,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1403569809}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
         m_MethodName: Update
         m_Mode: 1
@@ -3108,20 +3153,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1800549194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800549191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bddac86a2bd104197555b15ffefedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 60
-  slider: {fileID: 1800549193}
 --- !u!1 &1871542656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,3 +3783,4 @@ SceneRoots:
   - {fileID: 1391438935}
   - {fileID: 2029587980}
   - {fileID: 96845451}
+  - {fileID: 1403569810}
