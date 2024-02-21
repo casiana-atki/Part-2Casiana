@@ -17,10 +17,9 @@ public class BreadBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-;
-        //health = PlayerPrefs.GetFloat("Health", maxHealth);
-        health = maxHealth;
-        //CurrentState();
+        health = PlayerPrefs.GetFloat("Health", maxHealth);
+        health = maxHealth; 
+        CurrentState();
     }
 
     void Update()
@@ -29,29 +28,27 @@ public class BreadBehaviour : MonoBehaviour
     }
 
     public void Hit(float damage)
-    {
+    {   if(isDead) return;
         health -= damage;
         health = Mathf.Clamp(health, 0, maxHealth);
-        //CurrentState();
+        CurrentState();
 
     }
 
-   // public void HealthValue(float value)
-   // {
-        //health = value;
-   // }
+    public void CurrentHealth(float value)
+    {
+        health = value;
+    }
 
-    /*public void CurrentState()
+    public void CurrentState()
     {
         if (health <= 0)
         {
             isDead = true;
-            animator.SetTrigger("Death");
         }
         else
         {
             isDead = false;
-            animator.SetTrigger("Hit");
         }
-    }*/
+    }
 }
