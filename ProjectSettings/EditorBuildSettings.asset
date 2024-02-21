@@ -8,13 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Week 4/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Week 6/Scenes/SceneA.unity
     guid: 4df82b3d9a8bc4349bb70208e8469bad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Week 6/Scenes/SceneB.unity
     guid: eb460faa3eb8d7647adb5064de6af1b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Week 5/Scenes/Week 5.unity
     guid: 1647f5a42492be146892652ddefa2c98
+  - enabled: 1
+    path: Assets/Assignment/Scenes/TitleCard.unity
+    guid: 736b8b4218b257c4c98379dac20eb07b
+  - enabled: 1
+    path: Assets/Assignment/Scenes/InBetweenINFO.unity
+    guid: 52b9fe1c6dbf6a64cbfe357c83641ee3
+  - enabled: 1
+    path: Assets/Assignment/Scenes/MainScene.unity
+    guid: e53619e7e43812f42ba3ff3d119b47d0
+  - enabled: 1
+    path: Assets/Assignment/Scenes/GameWin.unity
+    guid: 92c3f6c520a8bf94f8c72e2ca1df434c
+  - enabled: 1
+    path: Assets/Assignment/Scenes/GameOver.unity
+    guid: 840c1aeb20c82ff469f05e38fe1b15db
   m_configObjects: {}
