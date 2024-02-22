@@ -6,40 +6,44 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    Rigidbody2D rigi;
+    public Color selectedColor;
+    public Color unselectedColor; 
     public SpriteRenderer playerSprite;
-    bool clickedOnSelf = false; 
+    Rigidbody2D rigi;
+    public float speed = 100;
+    bool isSelected = false; 
 
     void Start()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
+        Selected(false);
         rigi = GetComponent<Rigidbody2D>();
-        playerSprite = GetComponent<SpriteRenderer>();  
     }
 
     void Update()
     {
-        Selected(); 
+        
     }
 
     private void OnMouseDown()
     {
-        clickedOnSelf = true;
+        Selected(true);
+        Controller.SetCurrentSelection(this);
+        
     }
-
-    private void OnMouseUp()
+    public void Selected(bool isSelected)
     {
-        clickedOnSelf = false;
+        if (isSelected)
+        {
+            playerSprite.color = Color.green;  
+        }
+        else 
+        {
+            playerSprite.color = Color.red;  
+        }
     }
-
-    void Selected()
+    public void Move(Vector2 direction)
     {
-        if (clickedOnSelf == true)
-        {
-            playerSprite.color = Color.green; 
-        }
-        else if (clickedOnSelf == false)
-        {
-            return; 
-        }
+        rigi.AddForce(direction * speed, ForceMode2D.Impulse); 
     }
 }

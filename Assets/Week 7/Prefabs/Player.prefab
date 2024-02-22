@@ -246,4 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2562543c820b2140940364347e4d943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedColor: {r: 0.41006586, g: 0.8962264, b: 0.7745967, a: 0}
+  unselectedColor: {r: 0.46226418, g: 0.13655846, b: 0.115566045, a: 0}
   playerSprite: {fileID: 8946731698441725945}
