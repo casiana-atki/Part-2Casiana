@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Controller : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Controller : MonoBehaviour
     float charge;
     public float maxCharge;
     Vector2 direction; 
+
+    public static int score; 
 
     public static PlayerBehaviour CurrentSelection { get; private set; }
     public static void SetCurrentSelection(PlayerBehaviour player)
@@ -33,6 +36,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
+        ScoreUI.showScore.text = "Score:" + score; 
         if (CurrentSelection == null) return; 
 
         if (Input.GetKeyDown(KeyCode.Space))

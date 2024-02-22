@@ -11,7 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
     public SpriteRenderer playerSprite;
     Rigidbody2D rigi;
     public float speed = 100;
-    bool isSelected = false; 
+
 
     void Start()
     {

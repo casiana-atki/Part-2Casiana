@@ -4,10 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallBehaviour : MonoBehaviour
+public class BallScore : MonoBehaviour
 {
     public GameObject kickOff;
-    public int score;
     Rigidbody2D ballRB; 
 
 
@@ -23,16 +22,15 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Scored(); 
     }
 
     void Scored()
     {
-        score += 1;
         transform.position = kickOff.transform.position;
-        ballRB.velocity = Vector2.zero; 
+        ballRB.velocity = Vector2.zero;
+        ballRB.angularVelocity = 0;
+        Controller.score++;
 
     }
-    //Controller.scoreset = score; 
-    //scoreset += 1
 }
