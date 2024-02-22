@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class Timer : MonoBehaviour
         maxTime -= 1 * Time.deltaTime;
         slider.value = maxTime;
 
-        
+        if (maxTime <= 0) SceneManager.LoadScene("GameOver");
 
     }
 

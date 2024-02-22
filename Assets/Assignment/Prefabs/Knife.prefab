@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6432092606853317864}
   - component: {fileID: 8562072326291232939}
   - component: {fileID: 9126787912261539688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  cutleryPREFAB: {fileID: 9077939730360132838}
   cutleryModels:
   - {fileID: 21300000, guid: 76ef628a26c9bd94f9cc6e4817cab6e7, type: 3}
   - {fileID: 21300000, guid: ddb2cb4411de70041b4a349a6bd67d47, type: 3}
   - {fileID: 21300000, guid: d142244b2937da74d81a7801588348a3, type: 3}
   time: 0
+  bread: {fileID: 0}
 --- !u!50 &8562072326291232939
 Rigidbody2D:
   serializedVersion: 4
